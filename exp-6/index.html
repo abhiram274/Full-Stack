@@ -3,12 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Registration Form</title>
+    <script src="./validation.js"></script>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+     <style>
+        body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+    width: 50%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+fieldset {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.inline {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+
+button {
+    margin-top: 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+     </style>
 </head>
 <body>
-    <form action=""> 
-     <label for="name">Enter your name</label>
-     <input type="text" name="" id="name">
+    <h1>Student Registration Portal</h1>
+        <form id="registrationForm" action="/submit" method="post" enctype="multipart/form-data">
+
+     <label for="name">First Name:</label>
+             <input type="text" id="fname" name="fname" placeholder="Enter your name" required>
+
+     <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter last name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Create password" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="100">
+
+        <label for="website">Your Github Link:</label>
+        <input type="url" id="website" name="website" placeholder="https://example.com">
+
+         <fieldset>
+            <legend>Gender</legend>
+            <label class="inline"><input type="radio" name="gender" value="male"> Male</label>
+            <label class="inline"><input type="radio" name="gender" value="female"> Female</label>
+            <label class="inline"><input type="radio" name="gender" value="other"> Other</label>
+        </fieldset>
+
+        <!-- Course Selection -->
+        <label for="course">Select Course:</label>
+        <select id="course" name="course">
+            <option value="">--Select--</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc</option>
+            <option value="btech">B.Tech</option>
+            <option value="mba">MBA</option>
+        </select>
+
+
+           <fieldset>
+            <legend>Select your Skills</legend>
+            <label class="inline"><input type="checkbox" name="skills[]" value="html"> HTML</label>
+            <label class="inline"><input type="checkbox" name="skills[]" value="css"> CSS</label>
+            <label class="inline"><input type="checkbox" name="skills[]" value="javascript"> Javascript</label>
+            <label class="inline"><input type="checkbox" name="skills[]" value="node.js"> Node.js</label>
+            <label class="inline"><input type="checkbox" name="skills[]" value="python"> Python</label>
+            <label class="inline"><input type="checkbox" name="skills[]" value="react"> React</label>
+        
+        </fieldset>
+        
+        <fieldset>
+            <legend>Extracurricular Interests</legend>
+            <label class="inline"><input type="checkbox" name="hobbies[]" value="sports"> Sports</label>
+            <label class="inline"><input type="checkbox" name="hobbies[]" value="music"> Music</label>
+            <label class="inline"><input type="checkbox" name="hobbies[]" value="reading"> Reading</label>
+            <label class="inline"><input type="checkbox" name="hobbies[]" value="traveling"> Traveling</label>
+        </fieldset>
+
+        <!-- Color Picker -->
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color">
+
+        <!-- Range Slider -->
+        <label for="rating">Self-Rating (1-10):</label>
+        <input type="range" id="rating" name="rating" min="1" max="10">
+
+        <!-- Time Picker -->
+        <label for="time">Preferred Contact Time:</label>
+        <input type="time" id="time" name="time">
+
+        <!-- File Upload -->
+        <label for="photo">Upload Your Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+
+        <!-- Textarea -->
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" placeholder="Enter full address"></textarea>
+
+        <!-- Datalist -->
+        <label for="country">Country:</label>
+        <input list="countries" name="country" id="country" placeholder="Type to search...">
+        <datalist id="countries">
+            <option value="United States">
+            <option value="Canada">
+            <option value="United Kingdom">
+            <option value="India">
+            <option value="Australia">
+        </datalist>
+
+        <!-- Hidden Field -->
+        <input type="hidden" name="formID" value="student-registration-2025">
+
+        <!-- Submit & Reset -->
+        <button type="submit">Register</button>
+        <button type="reset">Reset</button>
+
     </form>
 </body>
 </html>
