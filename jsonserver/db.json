@@ -1,0 +1,14 @@
+{
+  "students": [
+    {
+      "id": "cabd",
+      "name": "abhiram kosuru",
+      "course": "CSE AI and ML"
+    },
+    {
+      "id": "b004",
+      "name": "Meghana",
+      "course": "CSE AI and ML"
+    }
+  ]
+}
